@@ -6,12 +6,6 @@
     box-sizing: border-box;
     font-family: "Playfair Display", serif;
 }
-.whole-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-}
 .logo{
     width: 100%;
     max-width: 150px;
@@ -20,21 +14,31 @@
     margin-bottom: 15px;
     margin-top: 10px;
 }
-.navigation{
+#whole-nav{
     display: flex;
-    justify-content: end;
-    font-weight: bolder;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+
 }
+
 .nav{
     display: inline-flex;
-    gap: 50px;
+    gap: 30px;
     list-style: none;
     margin-right: 100px;
+    font-weight: bolder;
 }
 .nav-item a{
     text-decoration: none;
-    color: black;
-    font-size: 20px;
+    color: white;
+    font-size: 18px;
     transition: 0.3s;
     z-index: 1;
     position: relative;
@@ -186,29 +190,6 @@
 }
 
 
-/* FIRST SECTION */
-.bini-video{
-    display: flex;
-    width: auto;
-    height: auto;
-    justify-content: center;
-    background-image: url(images/logo.jfif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-video{
-    width: 90%;
-    box-shadow: 0 30px 50px black;
-    margin: 50px 0;
-}
-
-@media (max-width: 1050px) {
-    video{
-        width: 90%;
-        height: auto;
-    }
-}
 
 /* SLIDER */
 .container{
@@ -265,25 +246,67 @@ video{
     left: 100px;
     width: 300px;
     text-align: left;
-    color: black;
+    color: white;
     transform: translate(0, -50%);
 }
 .slide .item:nth-child(2) .content{
     display: block;
 }
 .content .name{
-    font-size: 40px;
+    font-size: 50px;
     text-transform: uppercase;
     text-shadow: 0 10px 10px pink;
     font-weight: bolder;
     opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
+    animation: animate 1.3s ease-in-out 1 forwards;
 }
 .content .des{
     margin-top: 10px;
     margin-bottom: 20px;
     opacity: 0;
     animation: animate 1s ease-in-out 0.3s 1 forwards;
+    text-shadow: 0 10px 10px #7ACAD2;
+}
+/* BINI SPAN NAMES ON DES*/
+.aiah{
+    color: #7695FF;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.colet{
+    color: #BEDC74;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.maloi{
+    color: #F6FAB9;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.gwen{
+    color: #FF8343;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.staku{
+    color: #E3A5C7;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.mikha{
+    color: #A4001F;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.jhoanna{
+    color: #4E31AA;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.sheena{
+    color: #C8A1E0;
+    font-weight: bolder;
+    font-size: 20px;
 }
 .content button{
     padding: 10px 20px ;
