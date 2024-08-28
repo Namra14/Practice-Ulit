@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Playfair Display", serif;
+    font-family: "Roboto", sans-serif;
 }
 .logo{
     width: 100%;
@@ -25,32 +25,58 @@
     top: 0;
     right: 0;
     transition: background-color 0.3s ease;
-
 }
 
 .nav{
-    display: inline-flex;
-    gap: 30px;
+    display: flex;
+    gap: 20px;
     list-style: none;
-    margin-right: 100px;
-    font-weight: bolder;
+    margin-right: 60px;
+    flex-wrap: wrap;
 }
 .nav-item a{
     text-decoration: none;
     color: white;
     font-size: 18px;
     transition: 0.3s;
-    z-index: 1;
     position: relative;
     transition: 0.3s;
-    
 }
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background-color: #C8A1E0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.menu-icon .bar{
+    width: 25px;
+    height: 3px;
+    background-color: #0091F7;
+    transition: 0.3s;
+}
+.nav.active{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    background-color: rgb(226,191,217, 0.5);
+    position: absolute;
+    padding: 5px;
+    top: 80px;
+    right: -18px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
 /* BINI MIKHA */
 .nav-link1::after{
     content: ""; 
     position: absolute;
     left: 0;
-    bottom: -32px;
+    bottom: -35px;
     width: 100%;
     height: 5px;
     background-color: #C7253E;
@@ -73,7 +99,7 @@
     content: ""; 
     position: absolute;
     left: 0;
-    bottom: -32px;
+    bottom: -35px;
     width: 100%;
     height: 5px;
     background-color: #FFC700;
@@ -102,7 +128,7 @@
     content: ""; 
     position: absolute;
     left: 0;
-    bottom: -32px;
+    bottom: -35px;
     width: 100%;
     height: 5px;
     background-color: #1E2A5E;
@@ -117,15 +143,11 @@
 }
 
 /* BINI AIAH */
-.nav-link4:hover{
-    color: #508C9B;
-    transition: 0.2s;
-}
 .nav-link4::after{
     content: ""; 
     position: absolute;
     left: 0;
-    bottom: -32px;
+    bottom: -35px;
     width: 100%;
     height: 5px;
     background-color: #508C9B;
@@ -143,50 +165,29 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-@media screen and (max-width: 768px){
-    .logo{
-        max-width: 100px;
-        margin-left: 15px;
-        height: 30px;
-        margin-top: 10px;
-    }
-    .nav{
-        gap: 10px;
-        margin-right: 20px;
-    }
-    .nav-item a{
-        font-size: 15px;
-    }
-    .nav-link1, .nav-link2, .nav-link3, .nav-link4,::after{
-        width: 50%;
-        bottom: 10px;
-    }
+
+/* BINI AIAH */
+.nav-link5::after{
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    width: 100%;
+    height: 5px;
+    background-color: #508C9B;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    border-radius: 50px;
 }
-@media  screen and (max-width: 1100px) {
-    .logo{
-        width: 100px;
-        margin-left: 50px;
-    }
-    .nav{
-        gap: 10px;
-        margin-right: 40px;
-    }
-    .nav-item a{
-        font-size: 20px;
-    }
+.nav-link5:hover{
+    color: #508C9B;
+    transition: 0.4s;
+    text-shadow: 0px 10px 50px  #0091F7;
 }
-@media screen and (max-width: 500px){
-    .logo{
-        width: 80px;
-        margin-left: 30px;
-    }
-    .nav{
-        gap: 6px;
-        margin-right: 20px;
-    }
-    .nav-item a{
-        font-size: 10px;
-    }
+.nav-link5:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 
@@ -316,6 +317,7 @@
     animation: animate 1s ease-in-out 0.6s 1 forwards;
     background-color: #E2BFD9;
     color: #7695FF;
+    border-radius: 10px;
 }
 .content button:hover{
     background-color: #7695FF;
@@ -350,13 +352,42 @@
     border: 1px solid #E2BFD9;
     background-color: #E2BFD9;
     color: #7695FF;
+    font-weight: bolder;
     transition: 0.3s;
 }
 .button button:hover{
     background-color: #7695FF;
     color: #E2BFD9;
 }
-@media (max-width: 1050px) {
+
+/* FOR RESPONSIVENESS */
+@media (max-width: 1100px) {
+/* First Content navbar and backgrround */
+    .logo{
+        max-width: 100px;
+        margin-left: 60px;
+    }
+    .nav{
+        display: none; 
+        gap: 15px;
+        margin-right: 5%;
+        margin-bottom: 15px;
+    }
+    .nav-item a{
+        font-size: 18px;
+    }
+    .menu-icon {
+        display: flex;
+        margin-right: 5%;
+    }
+    .nav.active {
+        display: flex; 
+    }
+    .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
+        bottom: -8px;  
+    }
+
+    /* ABOUT SLIDER CONTAINER */
     .container{
         width: 80%;
         height: 400px;
@@ -371,27 +402,82 @@
         height: 100%;
     }
     .slide .item:nth-child(3){
-        left: 61%;
+        left: 58%;
     }
     .slide .item:nth-child(4){
-        left: calc(50% + 210px);
+        left: calc(50% + 180px);
     }
     .slide .item:nth-child(5){
-        left: calc(50% + 320px);
+        left: calc(50% + 290px);
     }
     .slide .item:nth-child(6){
-        left: calc(50% + 430px);
+        left: calc(50% + 400px);
+    }
+    .item .content{
+        top: 60%;
+        left: 30px;
+    }
+    .content .name{
+        font-size: 30px;
+    }
+    .content .des{
+        font-size: 10px;
+    }
+    .content button{
+        padding: 5px 10px ;
+    }
+    .aiah, .colet, .jhoanna, .maloi, .mikha, .staku, .sheena, .gwen{
+        font-size: 15px;
     }
     
 }
 @media (max-width: 768px){
+    /* First Content navbar and backgrround */
+    .logo{
+        max-width: 50px;
+        margin-left: 25px;
+        height: 20px;
+    }
+    .nav{
+        display: none; 
+        gap: 5px;
+        margin-right: 5%;
+        margin-bottom: 15px;
+    }
+    .nav-item a{
+        font-size: 8px;
+    }
+    .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
+        bottom: -8px;
+        
+    }
+    .menu-icon {
+        margin-right: 20%;
+        padding: 5px 7px;
+        border-radius: 5px;
+    }
+    .menu-icon .bar{
+        width: 13px;
+        height: 1px;
+    }
+    .nav.active {
+        top: 40px;
+        right: 58px;
+        border-radius: 5px;
+    }
+    .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
+        bottom: -8px;  
+    }
+    
+    /* ABOUT SLIDER CONTAINER */
     .container{
         width: 80%;
-        height: 250px;
+        height: 200px;
     }
     .container .slide .item{
-        width: 70px;
-        height: 90px;
+        width: 50px;
+        height: 65px;
+        border-radius: 8px;
     }
     .slide .item:nth-child(1),
     .slide .item:nth-child(2){
@@ -399,30 +485,38 @@
         height: 100%;
     }
     .slide .item:nth-child(3){
-        left: 50%;
+        left: 40%;
     }
     .slide .item:nth-child(4){
-        left: calc(50% + 90px);
+        left: calc(50% + 25px);
     }
     .slide .item:nth-child(5){
-        left: calc(50% + 180px);
+        left: calc(50% + 85px);
     }
     .slide .item:nth-child(6){
-        left: calc(50% + 270px);
+        left: calc(50% + 140px);
     }
     .slide .item:nth-child(n + 7){
-        left: calc(50% + 570px);
+        left: calc(50% + 215px);
         opacity: 0;
     }
+    
     .content{
         margin-top: 30px;
         margin-left: -90px;
+    }
+    .item .content{
+        top: 40%;
+        left: 100px;
     }
     .content .name{
         font-size: 15px;
     }
     .content .des{
         font-size: 5px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        width: 30%;
     }
     .content button{
         padding: 2px 7px ;
@@ -432,6 +526,9 @@
         background-color: #7695FF;
         color: #E2BFD9;
         transition: 0.3s;
+    }
+    .aiah, .colet, .jhoanna, .maloi, .mikha, .staku, .sheena, .gwen{
+        font-size: 6px;
     }
     .button{
         bottom: 7px;
