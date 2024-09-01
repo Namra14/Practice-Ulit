@@ -34,66 +34,9 @@ menuIcon.addEventListener("click", () => {
 
 
 // MUSIKA SLIDER
-const musikaContainer = document.querySelector(".musika-container");
-const musikaControlsContainer = document.querySelector(".musika-controls");
-const musikaControls = ["previous", "next"];
-const musikaItems = document.querySelector(".musika-item");
 
-class Carousel{
-    constructor(container, items, controls){
-        this.carouselContainer = container;
-        this.carouselControls = controls;
-        this.carouselArray = [...items]; 
-    }
-    updateMusika(){
-        this.carouselArray.forEach(el => {
-            el.classList.remove("musika-item1");
-            el.classList.remove("musika-item2");
-            el.classList.remove("musika-item3");
-            el.classList.remove("musika-item4");
-            el.classList.remove("musika-item5");
-            el.classList.remove("musika-item6");
-            el.classList.remove("musika-item7");
-            el.classList.remove("musika-item8");
-        });
 
-        this.carouselArray.slice(0, 8).forEach((el, i) => {
-            el.classList.add(`musika-item-${i+1}`);
-        });
-    }
 
-    setCurrentState(direction){
-        if (direction.className == "musika-controls-previous"){
-            this.carouselArray.unshift(this.carouselArray.pop());
-        }else{
-            this.carouselArray.push(this.carouselArray.shift());
-        }
-        this.updateMusika();
-    }
-
-    setControls(){
-        this.carouselControls.forEach(control => {
-            musikaControlsContainer.appendChild(document.createElement("button")).className = `musika-controls-${control}`;
-            document.querySelector(`.musika-controls-${control}`).innerText = control;
-        });
-    }
-
-    useControls(){
-        const triggers = [...musikaControlsContainer.childNodes];
-        triggers.forEach(control => {
-            control.addEventListener("click", e => {
-                e.preventDefault();
-                this.setCurrentState(control);
-            });
-            
-        });
-    }
-}
-
-const exampleCarousel = new Carousel(musikaContainer, musikaItems, musikaControls);
-
-exampleCarousel.setControls();
-exampleCarousel.useControls();
 // document.addEventListener("DOMContentLoaded", () =>{
 //     const logo = document.querySelector(".logo");
 
