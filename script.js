@@ -101,58 +101,30 @@ document.querySelector(".musika-prev").addEventListener("click", function() {
     updateSlider();
 });
 
-// function updateMiddleItem() {
-//     let items = document.querySelectorAll(".musika-item");
-//     let slider = document.querySelector(".musika-slider");
-//     let middleIndex = Math.floor(items.length / 2); // Index of the middle item
 
-//     items.forEach((item, index) => {
-//         // Check if this item is the middle one
-//         if (index === middleIndex) {
-//             item.classList.add("middle-item");
-//         } else {
-//             item.classList.remove("middle-item");
-//         }
-//     });
-// }
+// VIDEO SLIDER
+const prevButton = document.querySelector('.carousel-control-prev');
+const nextButton = document.querySelector('.carousel-control-next');
+const carouselInner = document.querySelector('.carousel-inner');
+const items = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
 
-// document.querySelectorAll(".musika-item").forEach(item => {
-//     let overlay = item.querySelector(".overlay");
+const updateCarousel = () => {
+    const totalItems = items.length;
+    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+};
 
-//     item.addEventListener("mouseover", function() {
-//         if (item.classList.contains("middle-item")) {
-//             overlay.style.background = "rgba(0, 0, 0, 0.5)"; // Semi-transparent black
-//             overlay.style.opacity = "1"; // Show overlay
-//         }
-//     });
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+});
 
-//     item.addEventListener("mouseout", function() {
-//         if (item.classList.contains("middle-item")) {
-//             overlay.style.background = "rgba(0, 0, 0, 0)"; // Transparent
-//             overlay.style.opacity = "0"; // Hide overlay
-//         }
-//     });
-// });
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
+});
 
-// // Call updateMiddleItem to initialize
-// updateMiddleItem();
 
-// // Example function to update middle item if slider changes, such as on navigation
-// function updateSlider() {
-//     // Your existing code to update the slider, then call:
-//     updateMiddleItem();
-// }
-
-// // Add event listeners for your slider controls
-// document.querySelector(".musika-next").addEventListener("click", function() {
-//     // Your code to move the slider, then:
-//     updateSlider();
-// });
-
-// document.querySelector(".musika-prev").addEventListener("click", function() {
-//     // Your code to move the slider, then:
-//     updateSlider();
-// });
 
 
 

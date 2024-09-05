@@ -216,7 +216,7 @@
     top: 60%;
     transform: translate(0, -50%);
     border-radius: 20px;
-    box-shadow: 00 30px 50px #505050;
+    box-shadow: 0 30px 50px #505050;
     background-position: 50% 50%;
     background-size: cover;
     transition: 0.5s;
@@ -524,6 +524,132 @@
 .musika-item:not(.middle-item) .overlay .musika-text {
     pointer-events: none; /* Disable clicking */
 }
+
+/* VIDEO SECTION */
+#videos{
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    height: 100%;
+
+}
+#videos .text{
+    text-align: center;
+    font-size: 46px;
+    color: #324B4E;
+    font-weight: 400;
+    margin-bottom: -10px;
+}
+
+.video-carousel {
+    display: flex;
+    margin: 100px auto;
+    position: relative;
+    width: 100%;
+    height: 550px; 
+    overflow: hidden; 
+    max-width: 1100px;
+}
+
+.carousel-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+.video-controls{
+    position: absolute;
+    display: flex;
+    right: 16%;
+    margin-top: -250px;
+    gap: 100px;
+}
+.video-controls span{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #E2BFD9;
+    border-radius: 50%;
+    background-color: #7ACAD2;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    margin-top: -30px;
+    
+}
+.video-controls span:hover{
+    opacity: 1;
+    box-shadow: 0 5px 10px #505050;
+    transition: 0.2s;
+}
+.video-controls span::before{
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    rotate: -45deg;
+}
+.video-controls span:last-child::before{
+    content: '';
+    position: initial;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    rotate: 135deg;
+}
+
+
+
+
+
 
 /* FOR 1400PX SCREENSIZE */
 @media (max-width: 1400px){
