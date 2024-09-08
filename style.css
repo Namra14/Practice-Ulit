@@ -857,7 +857,6 @@
     }
     .musika-controls span{
         margin-top: -500px;
-        
     }
 
     /* VIDEO SECTION */
@@ -1170,19 +1169,19 @@
     }
     .musika-slider .musika-item{
         top: calc(30% - 140px);
-        left: calc(65% - 100px);
-        max-width: 80px;
+        left: calc(65% - 110px);
+        max-width: 100px;
         height: 100px;
     }
     .musika-controls{
-        right: 47%;
+        right: 50%;
         gap: 10px;
     }
     .musika-controls span{
-        width: 40px;
-        height: 40px;
+        width: 10px;
+        height: 10px;
         opacity: 0.8;
-        margin-top: -30px;
+        margin-top: 500px;
         
     }
     .musika-controls span::before{
@@ -1197,7 +1196,7 @@
     }
     
     .musika-slider .musika-item:nth-child(1){
-        transform: translate3d(-800px,0,0) scale(0.9) rotateY(35deg) ;
+        transform: translate3d(-350px,0,0) scale(0.9) rotateY(35deg) ;
         z-index: 1;
     }
     .musika-slider .musika-item:nth-child(2){
@@ -1213,58 +1212,58 @@
         z-index: 4;
     }
     .musika-slider .musika-item:nth-child(5){
-        transform: translate3d(70px, 0, 0) scale(1) rotateY(-40deg) ;
+        transform: translate3d(70px, 0, 0) scale(1) rotateY(-25deg) ;
         z-index: 3;
     }
     .musika-slider .musika-item:nth-child(6){
-        transform: translate3d(100px, 0, 0) scale(1) rotateY(-40deg) ;
+        transform: translate3d(100px, 0, 0) scale(0.9) rotateY(-35deg) ;
         z-index: 2;
     }
     .musika-slider .musika-item:nth-child(7){
-        transform: translate3d(350px, 0, 0) scale(0) rotateY(-40deg) ;
+        transform: translate3d(350px, 0, 0) scale(0.9) rotateY(-35deg) ;
         z-index: -1;
     }
     .musika-controls{
-        right: 42%;
-        gap: 10px;
+        right: 44%;
+        gap: 8px;
     }
     .musika-controls span{
-        width: 25px;
-        height: 25px;
-        margin-top: -420px;
+        width: 20px;
+        height: 20px;
+        margin-top: -370px;
         
     }
     .musika-controls span::before{
-        left: 9px;
-        width: 5px;
-        height: 5px;
+        left: 6px;
+        width: 4px;
+        height: 4px;
     }
     .musika-controls span:last-child::before{
-        right: 9px;
-        width: 5px;
-        height: 5px;
+        right: 6px;
+        width: 4px;
+        height: 4px;
     }
     .overlay .musika-text{
-        padding: 2px 10px;
-        font-size: 7px;
+        padding: 2px 6px;
+        font-size: 5px;
         font-weight: bold;
     }
 
    /* VIDEO SECTION */
     #videos{
-        margin-top: -450px;
+        margin-top: -400px;
         padding-left: 50px;
         padding-right: 50px;
     }
     #videos .text{
-        margin-bottom: -30px;
+        margin-bottom: -50px;
         font-size: 25px;
     }
     .video-carousel {
-        height: 200px;
+        height: 230px;
     }
     
-    /* .carousel-control-prev,
+    .carousel-control-prev,
     .carousel-control-next {
         width: 20px;
         height: 20px;
@@ -1290,7 +1289,7 @@
         border-top: 2px solid white;
         border-left: 2px solid white;
         rotate: 135deg;
-    } */
+    }
 }
 
 
@@ -1298,35 +1297,36 @@
     /* First Content navbar and backgrround */
     .logo{
         max-width: 50px;
-        margin-left: 25px;
+        margin-left: 20px;
         height: 20px;
     }
     .nav{
         display: none; 
         gap: 5px;
-        margin-right: 5%;
+        margin-right: 22%;
         margin-bottom: 15px;
     }
     .nav-item a{
-        font-size: 8px;
-    }
-    .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
-        bottom: -8px;
-        
+        font-size: 7px;
     }
     .menu-icon {
+        display: flex;
         margin-right: 20%;
-        padding: 5px 7px;
+        padding: 5px 10px;
         border-radius: 5px;
     }
     .menu-icon .bar{
-        width: 13px;
-        height: 1px;
+        width: 10px;
+        height: 2px;
     }
     .nav.active {
+        display: flex; 
+    }
+    .nav.active{
+        width: 10%;
+        padding: 3px;
         top: 40px;
-        right: 58px;
-        border-radius: 5px;
+        right: -20px;
     }
     .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
         bottom: -8px;  
