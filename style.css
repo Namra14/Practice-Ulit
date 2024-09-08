@@ -583,12 +583,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(122, 202, 210, 0.5);
     color: white;
-    border: none;
     padding: 10px;
     cursor: pointer;
+    border: 2px solid #E2BFD9;
+    border-radius: 80px;
     z-index: 1;
+    width: 50px;
+    height: 50px;
 }
 
 .carousel-control-prev {
@@ -598,36 +601,18 @@
 .carousel-control-next {
     right: 10px;
 }
-.video-controls{
-    position: absolute;
-    display: flex;
-    right: 16%;
-    margin-top: -250px;
-    gap: 100px;
-}
-.video-controls span{
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #E2BFD9;
-    border-radius: 50%;
-    background-color: #7ACAD2;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    margin-top: -30px;
-    
-}
-.video-controls span:hover{
-    opacity: 1;
+.carousel-control-prev:hover{
     box-shadow: 0 5px 10px #505050;
-    transition: 0.2s;
+    left: 5px;
 }
-.video-controls span::before{
+.carousel-control-next:hover{
+    box-shadow: 0 5px 10px #505050;
+    right: 5px;
+}
+.carousel-control-prev::before{
     content: '';
     position: absolute;
+    margin-top: -5px;
     left: 20px;
     width: 10px;
     height: 10px;
@@ -635,9 +620,10 @@
     border-left: 2px solid white;
     rotate: -45deg;
 }
-.video-controls span:last-child::before{
+.carousel-control-next::before{
     content: '';
-    position: initial;
+    position: absolute;
+    margin-top: -5px;
     right: 20px;
     width: 10px;
     height: 10px;
@@ -649,10 +635,8 @@
 
 
 
-
-
 /* FOR 1400PX SCREENSIZE */
-@media (max-width: 1400px){
+@media (min-width: 1025px) and (max-width: 1400px){
     .logo{
         width: 100%;
         max-width: 130px;
@@ -783,8 +767,8 @@
 }
 
 
-/* FOR RESPONSIVENESS 1100PX SCREEN SIZE*/
-@media (max-width: 1100px) {
+/* TABLETS SCREEN SIZE*/
+@media (min-width: 768px) and (max-width: 1024px){
 /* First Content navbar and backgrround */
     .logo{
         max-width: 100px;
@@ -853,8 +837,9 @@
         font-size: 15px;
     }
     
+    /* MSUIKA SECTION */
     #musika{
-        padding: 50px;
+        padding: 100px;
     }
     .musika-slider{
         perspective: 1500px;
@@ -874,12 +859,79 @@
         margin-top: -500px;
         
     }
+
+    /* VIDEO SECTION */
+    #videos{
+        margin-top: -500px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    #videos .text{
+        margin-bottom: -30px;
+    }
+    .video-carousel {
+        height: 450px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(122, 202, 210, 0.5);
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border: 2px solid #E2BFD9;
+        border-radius: 80px;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .carousel-control-next {
+        right: 10px;
+    }
+    .carousel-control-prev:hover{
+        box-shadow: 0 5px 10px #505050;
+        left: 5px;
+    }
+    .carousel-control-next:hover{
+        box-shadow: 0 5px 10px #505050;
+        right: 5px;
+    }
+    .carousel-control-prev::before{
+        content: '';
+        position: absolute;
+        margin-top: -5px;
+        left: 15px;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        rotate: -45deg;
+    }
+    .carousel-control-next::before{
+        content: '';
+        position: absolute;
+        margin-top: -5px;
+        right: 15px;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        rotate: 135deg;
+    }
 }
 
-/* FOR RESPONSIVENESS 1100PX SCREEN SIZE*/
-@media (max-width: 900px) {
+/* FOR RESPONSIVENESS 1100PX SCREEN SIZE */
+/* @media (max-width: 900px) { */
     /* First Content navbar and backgrround */
-        .logo{
+        /* .logo{
             max-width: 100px;
             margin-left: 60px;
         }
@@ -901,10 +953,10 @@
         }
         .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
             bottom: -8px;  
-        }
+        } */
     
         /* ABOUT SLIDER CONTAINER */
-        .container{
+        /* .container{
             width: 80%;
             height: 400px;
         }
@@ -944,9 +996,10 @@
         }
         .aiah, .colet, .jhoanna, .maloi, .mikha, .staku, .sheena, .gwen{
             font-size: 15px;
-        }
+        } */
         
-        #musika{
+        /* MUSIKA SECTION */
+        /* #musika{
             padding: 50px;
         }
         .musika-slider{
@@ -995,10 +1048,253 @@
             transform: translate3d(550px, 0, 0) scale(0.9) rotateY(-35deg) ;
             z-index: -1;
         }
+
+    
+    } */
+
+    /* Small Devices (Large Phones) */
+@media (min-width: 481px) and (max-width: 767px){
+    /* First Content navbar and backgrround */
+    .logo{
+        max-width: 50px;
+        margin-left: 30px;
+        height: 20px;
+    }
+    .nav{
+        display: none; 
+        gap: 5px;
+        margin-right: 22%;
+        margin-bottom: 15px;
+    }
+    .nav-item a{
+        font-size: 10px;
+    }
+    .menu-icon {
+        display: flex;
+        margin-right: 22%;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .menu-icon .bar{
+        width: 10px;
+        height: 2px;
+    }
+    .nav.active {
+        display: flex; 
+    }
+    .nav.active{
+        width: 10%;
+        padding: 5px;
+        top: 50px;
+        right: -18px;
+    }
+    .nav-link1::after, .nav-link2::after, .nav-link3::after, .nav-link4::after, .nav-link5::after{
+        bottom: -8px;  
+    }
+    /* ABOUT SLIDER CONTAINER */
+    .container{
+        width: 80%;
+        height: 200px;
+    }
+    .container .slide .item{
+        width: 50px;
+        height: 65px;
+    }
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2){
+        width: 100%;
+        height: 100%;
+    }
+    .slide .item:nth-child(3){
+        left: 40%;
+    }
+    .slide .item:nth-child(4){
+        left: calc(50% + 25px);
+    }
+    .slide .item:nth-child(5){
+        left: calc(50% + 80px);
+    }
+    .slide .item:nth-child(6){
+        left: calc(50% + 135px);
+    }
+    .slide .item:nth-child(n + 7){
+        left: calc(50% + 215px);
+        opacity: 0;
+    }
+    
+    .content{
+        margin-top: 30px;
+        margin-left: -90px;
+    }
+    .item .content{
+        top: 40%;
+        left: 100px;
+    }
+    .content .name{
+        font-size: 15px;
+    }
+    .content .des{
+        font-size: 5px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        width: 30%;
+    }
+    .content button{
+        padding: 2px 7px ;
+        font-size: 7px;
+    }
+    .content button:hover{
+        background-color: white;
+        color: #7ACAD2;
+        transition: 0.3s;
+    }
+    .aiah, .colet, .jhoanna, .maloi, .mikha, .staku, .sheena, .gwen{
+        font-size: 6px;
+    }
+    .button{
+        bottom: 7px;
+    }
+    .button button{
+        width: 20px;
+        height: 15px;
+        font-size: 10px;
+        margin: 0 2px;
+    }
+     /* MUSIKA SLIDER */
+     #musika{
+        padding: 50px;
+    }
+    #musika .text{
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .musika-slider .musika-item{
+        top: calc(30% - 140px);
+        left: calc(65% - 100px);
+        max-width: 80px;
+        height: 100px;
+    }
+    .musika-controls{
+        right: 47%;
+        gap: 10px;
+    }
+    .musika-controls span{
+        width: 40px;
+        height: 40px;
+        opacity: 0.8;
+        margin-top: -30px;
+        
+    }
+    .musika-controls span::before{
+        left: 15px;
+        width: 10px;
+        height: 8px;
+    }
+    .musika-controls span:last-child::before{
+        right: 15px;
+        width: 10px;
+        height: 8px;
+    }
+    
+    .musika-slider .musika-item:nth-child(1){
+        transform: translate3d(-800px,0,0) scale(0.9) rotateY(35deg) ;
+        z-index: 1;
+    }
+    .musika-slider .musika-item:nth-child(2){
+        transform: translate3d(-100px, 0, 0) scale(0.9) rotateY(35deg) ;
+        z-index: 2;
+    }
+    .musika-slider .musika-item:nth-child(3){
+        transform: translate3d(-70px, 0, 0) scale(1) rotateY(25deg) ;
+        z-index: 3;
+    }
+    .musika-slider .musika-item:nth-child(4){
+        transform: translate3d(0px, 0, 0) scale(1.1) rotateY(0deg) ;
+        z-index: 4;
+    }
+    .musika-slider .musika-item:nth-child(5){
+        transform: translate3d(70px, 0, 0) scale(1) rotateY(-40deg) ;
+        z-index: 3;
+    }
+    .musika-slider .musika-item:nth-child(6){
+        transform: translate3d(100px, 0, 0) scale(1) rotateY(-40deg) ;
+        z-index: 2;
+    }
+    .musika-slider .musika-item:nth-child(7){
+        transform: translate3d(350px, 0, 0) scale(0) rotateY(-40deg) ;
+        z-index: -1;
+    }
+    .musika-controls{
+        right: 42%;
+        gap: 10px;
+    }
+    .musika-controls span{
+        width: 25px;
+        height: 25px;
+        margin-top: -420px;
+        
+    }
+    .musika-controls span::before{
+        left: 9px;
+        width: 5px;
+        height: 5px;
+    }
+    .musika-controls span:last-child::before{
+        right: 9px;
+        width: 5px;
+        height: 5px;
+    }
+    .overlay .musika-text{
+        padding: 2px 10px;
+        font-size: 7px;
+        font-weight: bold;
     }
 
+   /* VIDEO SECTION */
+    #videos{
+        margin-top: -450px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #videos .text{
+        margin-bottom: -30px;
+        font-size: 25px;
+    }
+    .video-carousel {
+        height: 200px;
+    }
+    
+    /* .carousel-control-prev,
+    .carousel-control-next {
+        width: 20px;
+        height: 20px;
+    }
+    .carousel-control-prev::before{
+        content: '';
+        position: absolute;
+        margin-top: -4px;
+        left: 8px;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        rotate: -45deg;
+    }
+    .carousel-control-next::before{
+        content: '';
+        position: absolute;
+        margin-top: -4px;
+        right: 8px;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        rotate: 135deg;
+    } */
+}
 
-@media (max-width: 768px){
+
+@media (min-width: 321px) and (max-width: 480px){
     /* First Content navbar and backgrround */
     .logo{
         max-width: 50px;
@@ -1107,11 +1403,11 @@
     }
      /* MUSIKA SLIDER */
      #musika{
-        padding: 50px;
+        padding: 30px;
     }
     #musika .text{
-        font-size: 30px;
-        margin-bottom: 0px;
+        font-size: 25px;
+        margin-bottom: 30px;
     }
     .musika-slider .musika-item{
         top: calc(30% - 140px);
@@ -1142,7 +1438,7 @@
     }
     
     .musika-slider .musika-item:nth-child(1){
-        transform: translate3d(-800px,0,0) scale(0.9) rotateY(35deg) ;
+        transform: translate3d(-350px,0,0) scale(0.9) rotateY(35deg) ;
         z-index: 1;
     }
     .musika-slider .musika-item:nth-child(2){
@@ -1166,17 +1462,17 @@
         z-index: 2;
     }
     .musika-slider .musika-item:nth-child(7){
-        transform: translate3d(350px, 0, 0) scale(0) rotateY(-40deg) ;
+        transform: translate3d(77px, 0, 0) scale(0) rotateY(-40deg) ;
         z-index: -1;
     }
     .musika-controls{
-        right: 42%;
-        gap: 10px;
+        right: 41%;
+        gap: 5px;
     }
     .musika-controls span{
         width: 25px;
         height: 25px;
-        margin-top: -420px;
+        margin-top: -430px;
         
     }
     .musika-controls span::before{
@@ -1194,9 +1490,51 @@
         font-size: 7px;
         font-weight: bold;
     }
+
+    /* VIDEO SECTION */
+    #videos{
+        margin-top: -450px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #videos .text{
+        margin-bottom: -30px;
+        font-size: 25px;
+    }
+    .video-carousel {
+        height: 200px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 20px;
+        height: 20px;
+    }
+    .carousel-control-prev::before{
+        content: '';
+        position: absolute;
+        margin-top: -4px;
+        left: 8px;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        rotate: -45deg;
+    }
+    .carousel-control-next::before{
+        content: '';
+        position: absolute;
+        margin-top: -4px;
+        right: 8px;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        rotate: 135deg;
+    }
 }
 
-@media (max-width: 390px){
+@media (max-width: 320px){
     /* First Content navbar and backgrround */
     .logo{
         max-width: 50px;
