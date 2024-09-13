@@ -70,7 +70,6 @@
     border-radius: 10px;
 }
 
-
 /* BINI MIKHA */
 .nav-link1::after{
     content: ""; 
@@ -545,7 +544,7 @@
 
 .video-carousel {
     display: flex;
-    margin: 100px auto;
+    margin: 100px auto 50px auto;
     position: relative;
     width: 100%;
     height: 550px; 
@@ -631,9 +630,163 @@
     border-left: 2px solid white;
     rotate: 135deg;
 }
+.btn-vid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7ACAD2;
+    margin: 0 47%;
+    border-radius: 20px;
+}
+.btn-vid a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 10px;
+}
+.btn-vid:hover{
+    box-shadow: 0 5px 10px #505050;
+    left: 5px;
+    margin: 0 46%;
+    transition: 0.3s;
+}
+.btn-vid a:hover{
+    font-size: 18px;
+    transition: 0.3s;
+}
 
+/* GALLERY */
+#gallery{
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    height: 100%;
 
+}
+#gallery .text{
+    text-align: center;
+    font-size: 46px;
+    color: #324B4E;
+    font-weight: 400;
+    margin-bottom: -10px;
+}
 
+.gallery-carousel {
+    display: flex;
+    margin: 100px auto 50px auto;
+    position: relative;
+    width: 100%;
+    height: 550px; 
+    overflow: hidden; 
+    max-width: 1200px;
+}
+
+.gal-carousel-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gal-carousel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.gal-carousel-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+.gal-carousel-item img{
+    width: 270px;
+    height: 300px;
+}
+
+.gal-carousel-control-prev,
+.gal-carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(122, 202, 210, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid #E2BFD9;
+    border-radius: 80px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+}
+
+.gal-carousel-control-prev {
+    left: 10px;
+}
+
+.gal-carousel-control-next {
+    right: 10px;
+}
+.gal-carousel-control-prev:hover{
+    box-shadow: 0 5px 10px #505050;
+    left: 5px;
+}
+.gal-carousel-control-next:hover{
+    box-shadow: 0 5px 10px #505050;
+    right: 5px;
+}
+.gal-carousel-control-prev::before{
+    content: '';
+    position: absolute;
+    margin-top: -5px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    rotate: -45deg;
+}
+.gal-carousel-control-next::before{
+    content: '';
+    position: absolute;
+    margin-top: -5px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    rotate: 135deg;
+}
+.btn-vid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7ACAD2;
+    margin: 0 47%;
+    border-radius: 20px;
+}
+.btn-vid a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 10px;
+}
+.btn-vid:hover{
+    box-shadow: 0 5px 10px #505050;
+    left: 5px;
+    margin: 0 46%;
+    transition: 0.3s;
+}
+.btn-vid a:hover{
+    font-size: 18px;
+    transition: 0.3s;
+}
 
 /* FOR 1400PX SCREENSIZE */
 @media (min-width: 1025px) and (max-width: 1400px){
@@ -731,6 +884,9 @@
     /* MUSIKA SLIDER */
     #musika{
         padding: 50px;
+    }
+    #musika .text{
+        padding-top: 50px;
     }
     .musika-slider .musika-item{
         top: calc(50% - 140px);

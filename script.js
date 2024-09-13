@@ -24,6 +24,7 @@ $prev.addEventListener("click", () => {
 
 
 
+
 // NAVBAR RESPONSIVE ICON
 const menuIcon = document.querySelector(".menu-icon");
 const nav = document.querySelector(".nav");
@@ -125,6 +126,27 @@ prevButton.addEventListener('click', () => {
 });
 
 
+// GALLERY SLIDER
+const prevGalBtn = document.querySelector(".gal-carousel-control-prev");
+const nextGalBtn = document.querySelector(".gal-carousel-control-next");
+const galInner = document.querySelector(".gal-carousel-inner");
+const galItems = document.querySelectorAll(".gal-carousel-item");
+let currentGalIndex = 0;
+
+const updateGalCarousel = () => {
+    const totalGalItems = galItems.length;
+    galInner.style.transform = `translateX(-${currentGalIndex * 100}%)`;
+};
+
+nextGalBtn.addEventListener("click", () =>{
+    currentGalIndex = (currentGalIndex + 1) % galItems.length;
+    updateGalCarousel();
+});
+
+prevGalBtn.addEventListener("click", () => {
+    currentGalIndex = (currentGalIndex - 1 + galItems.length) % galItems.length;
+    updateGalCarousel();
+});
 
 
 
