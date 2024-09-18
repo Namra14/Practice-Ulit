@@ -655,7 +655,7 @@
     transition: 0.3s;
 }
 
-/* GALLERY
+/* GALLERY*/
 #gallery{
     background-image: url("images/bg.jpg");
     background-size: cover;
@@ -678,7 +678,7 @@
     margin: 100px auto 50px auto;
     position: relative;
     width: 100%;
-    height: 550px; 
+    height: auto; 
     overflow: hidden; 
     max-width: 1200px;
 }
@@ -692,21 +692,22 @@
 
 .gal-carousel-inner {
     display: flex;
-    flex-wrap: wrap;
     transition: transform 0.5s ease-in-out;
     width: 100%;
 }
+
 .gal-carousel-item {
-    width: 100%;
+    flex: 0 0 100%; /* Ensure each item takes full width */
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
     justify-content: center;
 }
-.gal-carousel-item img{
+
+.gal-carousel-item img {
     width: 270px;
     height: 300px;
+    object-fit: cover; /* Ensure images are not stretched */
 }
 
 .gal-carousel-control-prev,
@@ -726,21 +727,26 @@
 }
 
 .gal-carousel-control-prev {
-    left: 10px;
+    left: 5px;
 }
 
 .gal-carousel-control-next {
-    right: 10px;
-}
-.gal-carousel-control-prev:hover{
-    box-shadow: 0 5px 10px #505050;
-    left: 5px;
-}
-.gal-carousel-control-next:hover{
-    box-shadow: 0 5px 10px #505050;
     right: 5px;
 }
-.gal-carousel-control-prev::before{
+
+.gal-carousel-control-prev:hover {
+    box-shadow: 0 5px 10px #505050;
+    left: 1px;
+    transition: 0.3s;
+}
+
+.gal-carousel-control-next:hover {
+    box-shadow: 0 5px 10px #505050;
+    right: 1px;
+    transition: 0.3s;
+}
+
+.gal-carousel-control-prev::before {
     content: '';
     position: absolute;
     margin-top: -5px;
@@ -749,9 +755,10 @@
     height: 10px;
     border-top: 2px solid white;
     border-left: 2px solid white;
-    rotate: -45deg;
+    transform: rotate(-45deg);
 }
-.gal-carousel-control-next::before{
+
+.gal-carousel-control-next::before {
     content: '';
     position: absolute;
     margin-top: -5px;
@@ -760,32 +767,11 @@
     height: 10px;
     border-top: 2px solid white;
     border-left: 2px solid white;
-    rotate: 135deg;
+    transform: rotate(135deg);
 }
-.btn-vid{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #7ACAD2;
-    margin: 0 47%;
-    border-radius: 20px;
-}
-.btn-vid a{
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 10px 10px;
-}
-.btn-vid:hover{
-    box-shadow: 0 5px 10px #505050;
-    left: 5px;
-    margin: 0 46%;
-    transition: 0.3s;
-}
-.btn-vid a:hover{
-    font-size: 18px;
-    transition: 0.3s;
-} */
+
+
+
 
 /* FOR 1400PX SCREENSIZE */
 @media (min-width: 1025px) and (max-width: 1400px){
