@@ -88,4 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
       modal.scrollLeft = scrollLeft - walkX;
       modal.scrollTop = scrollTop - walkY;
   });
+
+  // const text = document.querySelector("#gallery .text");
+  // text.style.fontSize = "100px";
   });
