@@ -1,0 +1,29 @@
+#profile{
+    font-family: "Montserrat", serif;
+}
+.card-title{
+    color: #bc102e;
+    font-size: 1.4rem;
+}
+.update-title{
+    font-size: .8rem;
+}
+.card-p{
+    font-weight: bold;
+}
+.card-span{
+    color: #bc102e;
+}
+#profile-picture{
+    border-radius: 50%;
+}
+.profile-picture {
+    border-radius: 20%;
+    border: 5px solid #f8f9fa;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    height: 300px;
+}
+.profile-picture:hover {
+    transform: scale(1.05);
+}
