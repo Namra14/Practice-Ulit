@@ -29,7 +29,7 @@ if (!$row) {
 }
 
 // Fetch user violations
-$sql = "SELECT name, email, profile_picture, violation_description, violation_date FROM users WHERE id = ?";
+$sql = "SELECT name, email, student_phone, parent_email, parent_phone, profile_picture, violation_description, violation_date FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -128,7 +128,10 @@ $query2->close();
                                     alt="Profile Picture">
                                 <div class="card-body">
                                     <h5 class="card-title"><span class="text-dark">Student Name:</span> <?php echo $row['name']; ?></h5>
-                                    <p class="card-text">Email: <span class="email"><?php echo $row['email']; ?></span></p>
+                                    <p class="card-text"><span class="card-p" >Student Email: </span><span class="card-span"><?php echo $row['email']; ?></span></p>
+                                    <p class="card-text"><span class="card-p" >Student Phone:</span> <span class="card-span"><?php echo $row['student_phone']; ?></span></p>
+                                    <p class="card-text"><span class="card-p" >Parent Email:</span> <span class="card-span"><?php echo $row['parent_email']; ?></span></p>
+                                    <p class="card-text"><span class="card-p" >Parent Phone: </span><span class="card-span"><?php echo $row['parent_phone']; ?></span></p>
 
                                     <!-- Update Profile Picture Form -->
                                     <form action="profile.php" method="POST" enctype="multipart/form-data">

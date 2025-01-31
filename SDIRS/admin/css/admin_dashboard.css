@@ -41,7 +41,7 @@ table {
     border-collapse: collapse;
 }
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #dc3545;
 }
 th, td {
     padding: 12px;
@@ -58,11 +58,12 @@ tr:hover {
     background-color: #f1f1f1;
 }
 .btn {
-    padding: 8px 12px;
+    padding: 5px 8px;
     text-decoration: none;
     color: white;
     background-color: #616161;
     border-radius: 4px;
+    margin-bottom: 2px;
 }
 .btn a:hover {
     background-color: #555;

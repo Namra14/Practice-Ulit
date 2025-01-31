@@ -20,7 +20,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
 }
 
 // Fetch all user accounts
-$sql = "SELECT id, name, email, profile_picture, violation_date, violation_description FROM users";
+$sql = "SELECT id, name, email, student_phone, parent_email, parent_phone, profile_picture, violation_date, violation_description FROM users";
 $result = $conn->query($sql);
 ?>
 
@@ -54,11 +54,11 @@ $result = $conn->query($sql);
                 <button id="successClose" class="btn btn-primary">Close</button>
             </div>
         </div>
-
+ 
     <div class="navbar">
         <h1 class="page-title">Admin Dashboard</h1>
         <div>
-            <a href="admin_users.php" class="btn">Manage Users</a>
+            <a href="admin_dashboard.php#USERS" class="btn">Manage Users</a>
             <a href="#" class="btn btn-danger" onclick="confirmLogout()">Logout</a>
             
            
@@ -82,7 +82,7 @@ $result = $conn->query($sql);
 
     <div class="container">
         <h1>Welcome, <?php echo htmlspecialchars($_SESSION['admin_name']); ?>!</h1>
-        <div class="table-container">
+        <div class="table-container" id="USERS">
             <h2>User Accounts</h2>
             <table>
                 <thead>
@@ -90,6 +90,9 @@ $result = $conn->query($sql);
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Student Phone</th>
+                        <th>Parent Email</th>
+                        <th>Parent Phone</th>
                         <th>Profile Picture</th>
                         <th>Violation Date</th>
                         <th>Violation</th>
@@ -102,6 +105,9 @@ $result = $conn->query($sql);
                             <td><?php echo htmlspecialchars($row['id']); ?></td>
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo htmlspecialchars($row['email']); ?></td>
+                            <td><?php echo htmlspecialchars($row['student_phone']); ?></td>
+                            <td><?php echo htmlspecialchars($row['parent_email']); ?></td>
+                            <td><?php echo htmlspecialchars($row['parent_phone']); ?></td>
                             <td>
                                 <?php if ($row['profile_picture']): ?>
                                     <img src="../img/profile/<?php echo htmlspecialchars($row['profile_picture']); ?>" alt="Profile Picture" width="100">
@@ -112,10 +118,11 @@ $result = $conn->query($sql);
                             <td><?php echo htmlspecialchars($row['violation_date']); ?></td> 
                             <td><?php echo htmlspecialchars($row['violation_description']); ?></td>
                             <td>
-                                <a href="edit_user.php?id=<?php echo $row['id']; ?>" class="btn-edit">Edit</a>
-                                <td>
-                                    <a href="#" class="btn btn-danger" onclick="confirmDelete(<?php echo $row['id']; ?>)">Delete</a>
-                                </td>
+                                <br><a href="edit_user.php?id=<?php echo $row['id']; ?>" class="btn-edit">Edit</a><br><br>
+                                <a href="#" class="btn btn-danger" onclick="confirmDelete(<?php echo $row['id']; ?>)">Delete</a>
+                                <br><br>
+                                <a href="#" class="btn btn-warning" onclick="confirmNotify(<?php echo $row['id']; ?>)">Notify</a>
+
 
                             </td>
                         </tr>
@@ -125,6 +132,14 @@ $result = $conn->query($sql);
         </div>
     </div>
     
+    <script>
+        function confirmNotify(userId) {
+            if (confirm('Are you sure you want to notify this user about their violation?')) {
+                window.location.href = 'notify_violation.php?id=' + userId;
+            }
+        }
+    </script>
+
     <script src="js/admin_dashboard.js" ></script>                           
     <script src="js/logout_modal.js" ></script>
     <!-- Bootstrap -->

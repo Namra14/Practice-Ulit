@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2024 at 09:24 AM
+-- Generation Time: Jan 31, 2025 at 07:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,17 +55,19 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `profile_picture` varchar(255) DEFAULT 'default-profile.jpg',
   `violation_description` text DEFAULT NULL,
-  `violation_date` date DEFAULT NULL
+  `violation_date` date DEFAULT NULL,
+  `student_phone` varchar(20) DEFAULT NULL,
+  `parent_email` varchar(255) DEFAULT NULL,
+  `parent_phone` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `profile_picture`, `violation_description`, `violation_date`) VALUES
-(1, 'james', 'james@gmail.com', '$2y$10$Ca4onaVjnejT7zvfQyYTvOGpNf34XZPy2/B3wVVtm5XsHwPdrBv3C', '1715864242468.jpg', 'Bullying', '2024-12-10'),
-(19, 'em', 'em@gmail.com', '$2y$10$CD3SHx4oFVu6yoeuz0IwOOLhWWyzqvnonr2r1BE.ZRRO.3o0.TAO2', 'default-profile.jpg', 'Bandalism', '2024-12-18'),
-(20, 'ross', 'ross@gmail.com', '$2y$10$JE74y/sYPrKLYHqlaZfyT.I4zLkD416g/qkyoKWK0B1DbeA12MhZe', 'default-profile.jpg', NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `profile_picture`, `violation_description`, `violation_date`, `student_phone`, `parent_email`, `parent_phone`) VALUES
+(1, 'james', 'james@gmail.com', '$2y$10$Ca4onaVjnejT7zvfQyYTvOGpNf34XZPy2/B3wVVtm5XsHwPdrBv3C', 'a4b2a895-681c-497a-9894-ce4d31a9a3cd-removebg-preview.png', 'Bullying', '2024-12-10', '', '', ''),
+(24, 'layla', 'web.vsmarketing@gmail.com', '$2y$10$G5N/cJiUUvpTFkSyuDMNqeIBietq35J.OiuWgyEA./75dIPV27Gra', 'default-profile.jpg', 'Bullying', '2025-01-31', '09123456789', 'web.vsmarketing@gmail.com', '09987456123');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,7 @@ ALTER TABLE `admin_accounts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `violations`

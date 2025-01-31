@@ -30,15 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             // Invalid password
-            header('Location: admin_login.php?error=invalid_password');
+            header('Location: login.php?error=invalid_password');
             exit();
         }
+        
     } else {
         // Invalid credentials or empty fields
         if (empty($email) || empty($password)) {
-            header('Location: admin_login.php?error=empty_fields');
+            header('Location: login.php?error=empty_fields');
         } else {
-            header('Location: admin_login.php?error=invalid_credentials');
+            header('Location: login.php?error=invalid_credentials');
         }
         exit();
     }

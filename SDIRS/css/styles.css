@@ -63,6 +63,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
+  --bg-team-color: #bc102e;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -10873,7 +10874,7 @@ p {
   margin-bottom: 1rem;  
 }
 .page-section h3.section-subheading, .page-section .section-subheading.h3 {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 400;
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -10885,14 +10886,15 @@ p {
     padding: 9rem 0;
   }
 }
-.btn-xl {
+.tell-me {
   padding: 1rem 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 700;
-  border: 2px solid #bc102e;
+  background-color: #bc102e;
+  border: 2px solid white;
 }
-.btn-xl:hover{
+.tell-me:hover{
   transition: .3s;
   font-size: 1.2rem;
 }
@@ -11025,6 +11027,9 @@ header.masthead .masthead-heading {
     line-height: 3.5rem;
     margin-bottom: 4rem;
   }
+}
+#portfolio .container{
+  background-color: red;
 }
 #portfolio .portfolio-item {
   max-width: 26rem;
@@ -11204,6 +11209,7 @@ header.masthead .masthead-heading {
 .timeline .timeline-body > ul,
 .timeline .timeline-body > p {
   margin-bottom: 0;
+  background-color: #0aa2c0;
 }
 
 @media (min-width: 768px) {
@@ -11276,6 +11282,9 @@ header.masthead .masthead-heading {
   .timeline > li.timeline-inverted > .timeline-panel {
     padding: 0 100px 20px 20px;
   }
+}
+#team .SDIRS-TEAM{
+  background-color: var(--bs-yellow);
 }
 .team-member {
   margin-bottom: 3rem;

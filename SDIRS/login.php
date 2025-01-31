@@ -6,10 +6,7 @@ if (isset($_GET['signup']) && $_GET['signup'] === 'success') {
         });
     </script>';
 }
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,10 +43,16 @@ if (isset($_GET['signup']) && $_GET['signup'] === 'success') {
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
+
+                <!-- New Input Fields -->
+                <input type="tel" name="student_phone" placeholder="Student's Phone Number" maxlength="11"  pattern="[0-9]{10,15}" required>
+                <input type="email" name="parent_email" placeholder="Parent's Email">
+                <input type="tel" name="parent_phone" placeholder="Parent's Phone Number" maxlength="11" pattern="[0-9]{10,15}" required>
+
                 <button type="submit">Sign Up</button>
             </form>
         </div>
-    
+
         <div class="form-container sign-in">
             <form action="signin.php" method="POST">
                 <h1>Sign In</h1>

@@ -12,7 +12,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
 $user_id = $_GET['id'];
 
 // Fetch the user's data
-$sql = "SELECT id, name, email, profile_picture, violation_description, violation_date FROM users WHERE id = ?";
+$sql = "SELECT id, name, email, student_phone, parent_email, parent_phone, profile_picture, violation_description, violation_date FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -23,6 +23,9 @@ $user = $result->fetch_assoc();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $student_phone = $_POST['student_phone'];
+    $parent_email = $_POST['parent_email'];
+    $parent_phone = $_POST['parent_phone'];
     $violation_description = $_POST['violation_description'];
     $violation_date = $_POST['violation_date'];
 
@@ -36,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Update user data in the database
-    $update_sql = "UPDATE users SET name = ?, email = ?, profile_picture = ?, violation_description = ?, violation_date = ? WHERE id = ?";
+    $update_sql = "UPDATE users SET name = ?, email = ?, student_phone = ?, parent_email = ?, parent_phone = ?, profile_picture = ?, violation_description = ?, violation_date = ? WHERE id = ?";
     $update_stmt = $conn->prepare($update_sql);
-    $update_stmt->bind_param("sssssi", $name, $email, $profile_picture, $violation_description, $violation_date, $user_id);
+    $update_stmt->bind_param("ssssssssi", $name, $email, $student_phone, $parent_email, $parent_phone, $profile_picture, $violation_description, $violation_date, $user_id);
     $update_stmt->execute();
 
     // Set a success message in the session
@@ -68,6 +71,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <label for="email">Email:</label>
             <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>">
+            
+            <label for="student_phone">Student Phone:</label>
+            <input type="tel" name="student_phone" value="<?php echo htmlspecialchars($user['student_phone']); ?>">
+
+            <label for="parent_email">Parent Email:</label>
+            <input type="email" name="parent_email" value="<?php echo htmlspecialchars($user['parent_email']); ?>">
+
+            <label for="parent_phone">Parent Phone:</label>
+            <input type="tel" name="parent_phone" value="<?php echo htmlspecialchars($user['parent_phone']); ?>">
 
             <label for="violation_description">Violation Description:</label>
             <textarea name="violation_description" rows="5" cols="40"><?php echo htmlspecialchars($user['violation_description']); ?></textarea>

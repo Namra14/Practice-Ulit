@@ -30,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: admin_dashboard.php'); // Redirect to admin dashboard
             exit();
         } else {
-            header('Location: admin_login.php?error=invalid_password');
+            header('Location: login.php?error=invalid_password');
             exit();
         }
     } else {
-        header('Location: admin_login.php?error=user_not_found');
+        header('Location: login.php?error=user_not_found');
         exit();
     }
 }
